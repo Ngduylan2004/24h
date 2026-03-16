@@ -1,0 +1,80 @@
+/* ========== HEADER — Cố định, scroll đổi style, nav hover gạch chân ========== */
+
+#site-header {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+}
+
+#site-header.scrolled {
+    border-bottom-color: rgba(148, 163, 184, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Desktop nav link */
+.nav-link-24h {
+    position: relative;
+    padding: 0.5rem 0;
+    color: rgba(226, 232, 240, 0.9);
+    transition: color 0.25s ease;
+}
+
+
+
+.nav-link-line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgb(39, 240, 255), rgba(39, 240, 255, 0.6));
+    border-radius: 2px;
+    transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-24h:hover .nav-link-line {
+    width: 100%;
+}
+
+/* CTA nút Liên Hệ (header) */
+#site-header a[href="#contact"].rounded-full {
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+#site-header a[href="#contact"].rounded-full:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 36px rgba(11, 102, 108, 0.5);
+}
+
+/* Mobile menu */
+#mobile-nav a:not(.rounded-full) {
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+#mobile-nav a:not(.rounded-full):hover {
+    color: rgb(39, 240, 255);
+    padding-left: 0.5rem;
+}
+
+#nav-toggle:focus {
+    outline: 2px solid rgba(39, 240, 255, 0.4);
+    outline-offset: 2px;
+}
+
+/* Theme sáng: header và mobile nav trên nền trắng */
+html[data-theme="light"] #site-header {
+    background: transparent;
+    backdrop-filter: blur(14px);
+    border-bottom-color: 1px solid transparent;
+    box-shadow: no-shadow 1px solid transparent;
+}
+html[data-theme="light"] #mobile-nav {
+    background: transparent;
+    border-top-color: transparent;
+}
+html[data-theme="light"] #mobile-nav a:not(.rounded-full) {
+    color: var(--color-text-main, #0f172a);
+}
+html[data-theme="light"] .nav-link-24h {
+    color: var(--color-text-main, #0f172a);
+}
+

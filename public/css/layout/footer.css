@@ -1,0 +1,52 @@
+/* ========== FOOTER — Link hover, form focus ========== */
+
+footer a:hover {
+    color: rgb(39, 240, 255);
+    transition: color 0.2s ease;
+}
+
+footer input[type="email"]:focus {
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+footer button[type="submit"] {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+footer button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(39, 240, 255, 0.3);
+}
+
+/* LIGHT MODE: footer nền trắng đậm hơn, bố cục gọn */
+html[data-theme="light"] footer {
+    background-color: #f5f7fb;
+    color: #0e1629;
+    border-top-color: rgba(148, 163, 184, 0.3);
+}
+
+html[data-theme="light"] footer p,
+html[data-theme="light"] footer span,
+html[data-theme="light"] footer li,
+html[data-theme="light"] footer a {
+    color: #0e1629;
+}
+
+html[data-theme="light"] footer a:hover {
+    color: #1d4ed8;
+}
+
+html[data-theme="light"] footer input[type="email"] {
+    background-color: #ffffff;
+    border-color: rgba(148, 163, 184, 0.5);
+    color: #0e1629;
+}
+
+html[data-theme="light"] footer input[type="email"]::placeholder {
+    color: #959191;
+}
+
+html[data-theme="light"] footer .container-24h:last-child {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+}
