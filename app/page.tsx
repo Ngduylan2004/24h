@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import AnimationShowcase from './components/AnimationShowcase';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 
@@ -11,6 +12,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Services />
+        <AnimationShowcase />
         <CTA />
       </main>
       <Footer />

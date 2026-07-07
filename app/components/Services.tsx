@@ -1,6 +1,9 @@
 'use client';
 
+import { useScrollAnimation } from '@/app/hooks/useScrollAnimation';
+
 export default function Services() {
+  const { elementRef, isVisible } = useScrollAnimation();
   const services = [
     {
       icon: '🤖',
@@ -46,13 +49,13 @@ export default function Services() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-accent-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-tertiary/5 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={elementRef}>
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 gradient-text">
+        <div className={`text-center mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 gradient-text-animated">
             Dịch Vụ Của Chúng Tôi
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto animate-fade-in-up delay-200">
             Các giải pháp công nghệ toàn diện để đưa doanh nghiệp của bạn lên tầm cao mới
           </p>
         </div>
@@ -62,11 +65,13 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group p-6 bg-surface border border-border rounded-2xl hover-lift hover-glow transition-all duration-300 cursor-pointer animate-fade-in-up"
+              className={`group p-6 bg-surface border border-border rounded-2xl hover-lift-big hover-glow-strong transition-all duration-300 cursor-pointer ${
+                isVisible ? 'animate-fade-in-up' : 'opacity-0'
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Icon */}
-              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-5xl mb-4 group-hover:scale-110 group-hover:animate-spin-slow transition-all duration-500 inline-block">
                 {service.icon}
               </div>
 
