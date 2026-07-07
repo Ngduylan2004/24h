@@ -1,79 +1,143 @@
-/* ========== HEADER — Cố định, scroll đổi style, nav hover gạch chân ========== */
+/* ========== HEADER — Modern Animated Navigation ========== */
 
 #site-header {
     background: transparent;
     border-bottom: 1px solid transparent;
+    animation: slideDown 0.6s ease-out;
 }
 
 #site-header.scrolled {
-    border-bottom-color: rgba(148, 163, 184, 0.15);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border-bottom-color: rgba(0, 212, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 212, 255, 0.1);
+    background: rgba(10, 14, 39, 0.8);
 }
 
-/* Desktop nav link */
+/* Desktop nav link - Advanced hover effect */
 .nav-link-24h {
     position: relative;
     padding: 0.5rem 0;
-    color: rgba(226, 232, 240, 0.9);
-    transition: color 0.25s ease;
+    color: rgba(240, 244, 248, 0.85);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-
+.nav-link-24h:hover {
+    color: #00d4ff;
+}
 
 .nav-link-line {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -2px;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, rgb(39, 240, 255), rgba(39, 240, 255, 0.6));
+    background: linear-gradient(90deg, #00d4ff, #8000ff);
     border-radius: 2px;
-    transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .nav-link-24h:hover .nav-link-line {
     width: 100%;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8), 0 0 30px rgba(128, 0, 255, 0.4);
 }
 
-/* CTA nút Liên Hệ (header) */
+/* CTA Button - Contact */
 #site-header a[href="#contact"].rounded-full {
-    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+}
+
+#site-header a[href="#contact"].rounded-full::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
 }
 
 #site-header a[href="#contact"].rounded-full:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 36px rgba(11, 102, 108, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.3);
 }
 
-/* Mobile menu */
+#site-header a[href="#contact"].rounded-full:hover::before {
+    left: 100%;
+}
+
+/* Mobile menu - Smooth transitions */
+#mobile-nav {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
 #mobile-nav a:not(.rounded-full) {
-    transition: color 0.2s ease, padding-left 0.2s ease;
+    position: relative;
+    transition: all 0.3s ease;
+    padding-left: 0;
+}
+
+#mobile-nav a:not(.rounded-full)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4ff, #8000ff);
+    transition: width 0.3s ease;
 }
 
 #mobile-nav a:not(.rounded-full):hover {
-    color: rgb(39, 240, 255);
-    padding-left: 0.5rem;
+    color: #00d4ff;
+    transform: translateX(8px);
+}
+
+#mobile-nav a:not(.rounded-full):hover::after {
+    width: 100%;
+}
+
+/* Mobile menu button animation */
+#nav-toggle {
+    transition: all 0.3s ease;
+}
+
+#nav-toggle:hover {
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
 }
 
 #nav-toggle:focus {
-    outline: 2px solid rgba(39, 240, 255, 0.4);
+    outline: 2px solid rgba(0, 212, 255, 0.4);
     outline-offset: 2px;
 }
 
-/* Theme sáng: header và mobile nav trên nền trắng */
+/* Bar animations */
+#bar-1, #bar-2, #bar-3 {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Light theme adjustments */
 html[data-theme="light"] #site-header {
     background: transparent;
     backdrop-filter: blur(14px);
-    border-bottom-color: 1px solid transparent;
-    box-shadow: no-shadow 1px solid transparent;
 }
+
+html[data-theme="light"] #site-header.scrolled {
+    background: rgba(240, 244, 248, 0.85);
+}
+
 html[data-theme="light"] #mobile-nav {
-    background: transparent;
-    border-top-color: transparent;
+    background: rgba(240, 244, 248, 0.95);
+    border-top-color: rgba(0, 212, 255, 0.2);
 }
+
 html[data-theme="light"] #mobile-nav a:not(.rounded-full) {
     color: var(--color-text-main, #0f172a);
 }
+
 html[data-theme="light"] .nav-link-24h {
     color: var(--color-text-main, #0f172a);
 }
