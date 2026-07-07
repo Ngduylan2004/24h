@@ -91,6 +91,11 @@
     </style>
 
     <link rel="stylesheet" href="{{ asset('css/layout/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layout/hero.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layout/partners.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layout/services.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layout/cta.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layout/footer-modern.css') }}">
     <link rel="stylesheet" href="{{ asset('css/layout/footer.css') }}">
     @stack('styles')
     @stack('head')

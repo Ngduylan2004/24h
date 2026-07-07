@@ -1,0 +1,234 @@
+/*
+ * ============================================
+ * ANIMATIONS SUMMARY - Quick Reference
+ * ============================================
+ * 
+ * This file documents all animations used in the project
+ * For full details, see /resources/css/animations.css
+ */
+
+/* ============================================
+   1. ENTRANCE ANIMATIONS (Use on page load)
+   ============================================ */
+
+.animate-fade-in-up      { animation: fadeInUp 0.6s ease-out forwards; }
+.animate-fade-in-down    { animation: fadeInDown 0.6s ease-out forwards; }
+.animate-fade-in-left    { animation: fadeInLeft 0.6s ease-out forwards; }
+.animate-fade-in-right   { animation: fadeInRight 0.6s ease-out forwards; }
+.animate-slide-up        { animation: slideUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.animate-slide-down      { animation: slideDown 0.8s ease-out; }
+.animate-blur-in         { animation: blurIn 0.7s ease-out; }
+
+/* ============================================
+   2. CONTINUOUS ANIMATIONS (Infinite loops)
+   ============================================ */
+
+.animate-float           { animation: float 3s ease-in-out infinite; }
+.animate-glow            { animation: glow 2s ease-in-out infinite; }
+.animate-pulse-glow      { animation: pulse-glow 2s infinite; }
+.animate-rotate          { animation: rotate360 2s linear infinite; }
+.animate-scale-bounce    { animation: scaleBounce 1s ease-in-out infinite; }
+.animate-bounce-up       { animation: bounce-up 1.5s ease-in-out infinite; }
+.animate-shimmer         { animation: shimmer 2s infinite; }
+.animate-gradient-flow   { background-size: 200% 200%; animation: gradientFlow 3s ease infinite; }
+.animate-text-reveal     { animation: textReveal 0.8s ease-out forwards; }
+
+/* ============================================
+   3. HOVER EFFECTS (Interactive)
+   ============================================ */
+
+.hover-lift              { transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.hover-lift:hover        { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2); }
+
+.hover-scale             { transition: all 0.3s ease; }
+.hover-scale:hover       { transform: scale(1.05); }
+
+.hover-glow              { transition: all 0.3s ease; }
+.hover-glow:hover        { box-shadow: 0 0 30px rgba(0, 212, 255, 0.4); }
+
+.hover-rotate            { transition: all 0.3s ease; }
+.hover-rotate:hover      { transform: rotate(5deg); }
+
+.hover-accent-text       { transition: all 0.3s ease; }
+.hover-accent-text:hover { color: #00d4ff; text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
+
+/* ============================================
+   4. SCROLL REVEAL ANIMATIONS
+   ============================================ */
+
+.reveal-up       { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+.reveal-up.is-visible    { opacity: 1; transform: translateY(0); }
+
+.reveal-left     { opacity: 0; transform: translateX(-30px); transition: all 0.6s ease-out; }
+.reveal-left.is-visible  { opacity: 1; transform: translateX(0); }
+
+.reveal-right    { opacity: 0; transform: translateX(30px); transition: all 0.6s ease-out; }
+.reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+
+.reveal-scale    { opacity: 0; transform: scale(0.9); transition: all 0.6s ease-out; }
+.reveal-scale.is-visible { opacity: 1; transform: scale(1); }
+
+/* ============================================
+   5. STAGGERED ANIMATIONS
+   ============================================ */
+
+.animate-stagger-children > * { animation: fadeInUp 0.6s ease-out forwards; }
+.animate-stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.animate-stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.animate-stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.animate-stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.animate-stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.animate-stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* ============================================
+   6. SECTION-SPECIFIC ANIMATIONS
+   ============================================ */
+
+/* HEADER */
+#site-header { animation: slideDown 0.6s ease-out; }
+
+/* HERO */
+.hero-slide { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.hero-slide.active { opacity: 1; transform: translateY(0); }
+.hero-dot:hover { transform: scale(1.2); box-shadow: 0 0 10px rgba(0, 212, 255, 0.6); }
+.hero-stat-card { animation: fadeInUp 0.7s ease-out backwards; }
+
+/* PARTNERS MARQUEE */
+.partners-track { animation: marquee 20s linear infinite; }
+.partners-track:hover { animation-play-state: paused; }
+.partners-logo:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+
+/* SERVICES */
+article.glass-card { animation: fadeInUp 0.6s ease-out backwards; }
+article.glass-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15); }
+
+/* CTA */
+.cta-button-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(0, 212, 255, 0.6); }
+.cta-button-secondary:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(0, 212, 255, 0.4); }
+.cta-feature-item:hover .cta-feature-icon { transform: scale(1.1) rotate(-5deg); }
+
+/* FOOTER */
+footer { animation: fadeInUp 0.7s ease-out; }
+.social-link:hover { transform: scale(1.15) translateY(-4px); box-shadow: 0 0 20px rgba(0, 212, 255, 0.4); }
+
+/* ============================================
+   7. RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-fade-in-left,
+  .animate-fade-in-right {
+    animation-duration: 0.5s;
+  }
+
+  .hover-lift:hover { transform: translateY(-4px); }
+  .partners-track { animation: marquee 15s linear infinite; }
+}
+
+/* ============================================
+   8. PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+.glass-card,
+.hero-slide,
+article.glass-card,
+.partners-logo,
+.cta-button-primary,
+.cta-button-secondary {
+  will-change: transform;
+}
+
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+  will-change: opacity, transform;
+}
+
+/* ============================================
+   9. GRADIENT ANIMATIONS
+   ============================================ */
+
+.bg-gradient-animate {
+  background: linear-gradient(-45deg, #00d4ff, #8000ff, #ff006e, #00d4ff);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #00d4ff, #8000ff, #ff006e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 3s ease infinite;
+}
+
+/* ============================================
+   10. DEBUG UTILITIES
+   ============================================ */
+
+/* Use class="debug-animation" to see animation boundaries */
+.debug-animation {
+  outline: 2px dashed rgba(0, 212, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Use class="debug-transition" to see transitions */
+.debug-transition {
+  outline: 2px solid rgba(0, 212, 255, 0.5);
+  animation: pulse-glow 1s infinite;
+}
+
+/* ============================================
+   SUMMARY OF ANIMATION FILES
+   ============================================
+
+/resources/css/animations.css
+  └─ Core animations library with all @keyframes
+
+/public/css/layout/
+  ├─ header.css         → Navigation & button animations
+  ├─ hero.css           → Hero section + particle effects
+  ├─ partners.css       → Marquee + logo animations
+  ├─ services.css       → Service cards + stagger
+  ├─ cta.css            → CTA buttons + form animations
+  └─ footer-modern.css  → Footer + social animations
+
+/resources/views/layouts/app.blade.php
+  └─ Links all CSS files in correct order
+
+============================================
+
+QUICK START
+
+1. Add animation to element:
+   <div class="animate-fade-in-up">Content</div>
+
+2. Add hover effect:
+   <button class="hover-lift hover-glow">Click</button>
+
+3. Add scroll reveal:
+   <div class="reveal-up">Reveals on scroll</div>
+
+4. Add staggered animation:
+   <ul class="animate-stagger-children">
+     <li>Item 1</li>
+     <li>Item 2</li>
+     <li>Item 3</li>
+   </ul>
+
+5. Add continuous animation:
+   <div class="animate-glow">Glowing text</div>
+
+============================================
+*/
